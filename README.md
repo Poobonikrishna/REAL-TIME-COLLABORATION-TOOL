@@ -45,15 +45,5 @@ OUTPUT:===
 
 FINAL OUTPUT:=
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d8209ac0-7974-422f-a511-dc70b92787a3" />
 
-
-
-CONNECTION SUCESSFUL:==
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ebb3bb53-c416-4e3b-bb2a-4878a15963d6" />
-
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/93d52b56-d289-4943-8cfe-7e42e3dbb474" />
-
-
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/d8209ac0-7974-422f-a511-dc70b92787a3" />
 
