@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabEdit - Real-Time Collaborative Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>🚀 CollabEdit</h1>
+                <p>Real-Time Collaborative Platform</p>
+            </div>
+
+            <!-- User Section -->
+            <div class="user-section">
+                <h3>👥 Online Users</h3>
+                <div id="users-list" class="users-list">
+                    <div class="user-item">
+                        <div class="user-avatar" style="background-color: #4ECDC4;">Y</div>
+                        <span>You</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Section -->
+            <div class="documents-section">
+                <h3>📁 Documents</h3>
+                <div class="document-actions">
+                    <button id="new-doc-btn" class="btn-primary">+ New Document</button>
+                    <button id="load-docs-btn" class="btn-secondary">Refresh</button>
+                </div>
+                <div id="documents-list" class="documents-list">
+                    <!-- Documents will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Connection Status -->
+            <div class="connection-status">
+                <div id="status-indicator" class="status-indicator"></div>
+                <span id="status-text">Connecting...</span>
+            </div>
+        </div>
+
+        <!-- Main Editor Area -->
+        <div class="main-content">
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <input type="text" id="document-title" class="document-title" 
+                       placeholder="Untitled Document" value="Welcome Document">
+                <div class="toolbar-actions">
+                    <button id="save-btn" class="btn-secondary" title="Save Document">
+                        💾 Save
+                    </button>
+                    <button id="share-btn" class="btn-primary" title="Share Document">
+                        🔗 Share
+                    </button>
+                </div>
+            </div>
+
+            <!-- Editor Container -->
+            <div class="editor-container">
+                <div id="editor" class="editor" contenteditable="true"></div>
+                <div id="cursors-container" class="cursors-container"></div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="typing-indicators" id="typing-indicators"></div>
+                <div class="document-stats">
+                    <span id="char-count">0 characters</span>
+                    <span id="word-count">0 words</span>
+                    <span id="user-count">1 user online</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>👋 Join Collaborative Session</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="username">Your Name:</label>
+                    <input type="text" id="username" placeholder="Enter your display name" 
+                           maxlength="20" autocomplete="off" value="User">
+                </div>
+                <div class="form-group">
+                    <label for="document-select">Select Document:</label>
+                    <select id="document-select" class="form-input">
+                        <option value="default">Default Document</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="join-btn" class="btn-primary">Join Session</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔗 Share Document</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Document Link:</label>
+                    <div class="input-group">
+                        <input type="text" id="share-link" readonly class="form-input">
+                        <button id="copy-link-btn" class="btn-secondary">Copy</button>
+                    </div>
+                </div>
+                <div class="share-info">
+                    <p>Anyone with this link can view and edit this document</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="close-share-btn" class="btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="utils/helpers.js"></script>
+    <script src="utils/cursorManager.js"></script>
+    <script src="components/editor.js"></script>
+    <script src="components/sidebar.js"></script>
+    <script src="components/userList.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
