@@ -29,13 +29,6 @@ A real-time collaborative coding and note-taking platform similar to Google Docs
 - Node.js (v14 or higher)
 - npm
 
-### Installation
-
-1. **Clone or download the project**
-```bash
-mkdir collaborative-platform
-
-cd collaborative-platform
 
 ----------------------------------------------
 
@@ -53,6 +46,7 @@ FINAL OUTPUT:=
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/870c4053-ee18-4c2d-8884-76f4d73ecc1a" />
 
 <img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ecd900c7-a2b7-4d0c-b6ef-1126c7d4b1b0" />
+
 
 
 
